@@ -16,23 +16,24 @@ function TeacherList() {
       console.error("Failed to load teacher data:", error);
     }
   };
-
   useEffect(() => {
     const token = localStorage.getItem("token");
+    
     if (token) {
       try {
         const decoded = jwtDecode(token);
-        console.log(decoded.user.name);
-        console.log(decoded.user.role);
-        console.log(decoded);
-        // Access user information from decodedToken
-        if (decoded.user.role === "Teacher" || "Admin") {
-         
+
+        if (decoded.user.role === "Teacher" || decoded.user.role === "Admin") {
           setIsAuthorized(true);
+        } else {
+          setIsAuthorized(false);
         }
       } catch (error) {
         console.error("Failed to decode token:", error);
+        setIsAuthorized(false);
       }
+    } else {
+      setIsAuthorized(false);
     }
 
     loadData();
