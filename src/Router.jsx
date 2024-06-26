@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route ,Switch } from "react-router-dom";
 import Register from "./Register/Register.jsx";
 import Login from "./login/Login.jsx";
 import ProtectedRoute from "./ProtectedRoutes.jsx";
@@ -12,6 +12,8 @@ import ResetPassword from "./login/ResetPassword.jsx";
 const AppRoute = () => {
   return (
     <BrowserRouter>
+    <Switch>
+
       <Routes>
         <Route path="/" element={<ProtectedRoute Component={ <Home /> } />} />
         <Route path="/student" element={<ProtectedRoute Component={ < App /> } />} />
@@ -21,6 +23,7 @@ const AppRoute = () => {
         <Route path="/forgetpassword" element={<ForgetPassword />} />
         <Route path="/resetpassword" element={<ResetPassword />} />
       </Routes>
+    </Switch>
     </BrowserRouter>
   );
 };
