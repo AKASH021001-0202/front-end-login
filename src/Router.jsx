@@ -11,9 +11,6 @@ import ResetPassword from "./login/ResetPassword.jsx";
 
 const AppRoute = () => {
   return (
- 
-
-
       <Routes>
         <Route exact  path="/" element={<ProtectedRoute Component={ <Home /> } />} />
         <Route path="/student" element={<ProtectedRoute Component={ < App /> } />} />
@@ -23,8 +20,6 @@ const AppRoute = () => {
         <Route path="/forgetpassword" element={<ForgetPassword />} />
         <Route path="/resetpassword" element={<ResetPassword />} />
       </Routes>
- 
-
   );
 };
 
