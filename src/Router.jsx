@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route ,Router } from "react-router-dom";
+import { BrowserRouter, Routes, Route  } from "react-router-dom";
 import Register from "./Register/Register.jsx";
 import Login from "./login/Login.jsx";
 import ProtectedRoute from "./ProtectedRoutes.jsx";
@@ -11,8 +11,8 @@ import ResetPassword from "./login/ResetPassword.jsx";
 
 const AppRoute = () => {
   return (
-    <BrowserRouter>
-<Router>
+ 
+
 
       <Routes>
         <Route exact  path="/" element={<ProtectedRoute Component={ <Home /> } />} />
@@ -24,9 +24,7 @@ const AppRoute = () => {
         <Route path="/resetpassword" element={<ResetPassword />} />
       </Routes>
  
-</Router>
 
-    </BrowserRouter>
   );
 };
 
